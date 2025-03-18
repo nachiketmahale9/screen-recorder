@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        video{
+            min-width:480px !important;
+            min-height:320px !important;
+            max-width: 481px !important;
+            max-height: 321px !important;
+        }
+        section{
+            height: 500px !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <div class="App">
+        <div class="loader">
+
+        </div>
+        <div class="main w-full min-h-screen">
+            <nav class="bg-gray-800 p-6 w-full flex items-center justify-between">
+                <h1>🎥 Screen Recorder</h1>
+                <h1>Screen Recorder</h1>
+            </nav>
+            <section class="flex flex-wrap justify-center items-center p-6 min-h-96">
+                <div class="video-wrapper flex-1 flex justify-center">
+                    <video id="stream-source" class="bg-black rounded-lg overflow-hidden border-4 border-gray-800" autoplay muted></video>
+                </div>
+                <div class="btn flex-1 flex flex-col  items-center justify-center gap-4">
+                    <div class="btn-wrapper flex h-max gap-4">
+                        <button id="micBtn" class="flex items-center space-x-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all duration-300">
+                            <i id="micIcon" class="fas fa-microphone text-green-400"></i>
+                            <span>Mic Audio</span>  
+                        </button>
+                        <button id="systemBtn" class="flex items-center space-x-2 px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all duration-300">
+                            <i id="systemIcon" class="fas fa-volume-up text-green-400"></i>
+                            <span>System Audio</span>
+                        </button>
+                    </div>
+                    <div class="btn-wrapper flex gap-4">
+                        <button id="startBtn" class="px-6 py-2 bg-green-600 hover:bg-green-700 rounded-lg transition duration-300">
+                            ▶️ Start Recording
+                        </button>
+                        <button id="stopBtn" class="px-6 py-2 bg-red-600 hover:bg-red-700 rounded-lg transition duration-300">
+                            ⏹️ Stop Recording
+                        </button>
+                    </div>
+                    <a id="downloadLink" class="flex justify-center items-center hidden">📥 Download Video</a>
+                </div>
+            </section>
+            <footer></footer>
+        </div>
+    </div>
+    
+    <script src="home.js"></script>
+</body>
+</html>
